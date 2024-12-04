@@ -1,0 +1,1 @@
+```C:\keycloak-26.0.7\bin>kc.bat start-dev```
