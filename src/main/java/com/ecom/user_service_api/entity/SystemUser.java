@@ -5,7 +5,7 @@ import lombok.*;
 
 import java.util.Date;
 
-@AllArgsConstructor
+//@AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
@@ -22,4 +22,11 @@ public class SystemUser {
     private String firstName;
     @Column(name = "last_name", length = 45, nullable = false)
     private String lastName;
+
+    public SystemUser(String propertyId, String email, String firstName, String lastName) {
+        this.propertyId = propertyId;
+        this.email = email;
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
 }

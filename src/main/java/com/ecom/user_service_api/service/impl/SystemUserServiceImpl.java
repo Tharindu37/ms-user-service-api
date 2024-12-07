@@ -32,7 +32,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Optional;
 
-@RequiredArgsConstructor
+//@RequiredArgsConstructor
 @Service
 public class SystemUserServiceImpl implements SystemUserService {
 
@@ -46,6 +46,11 @@ public class SystemUserServiceImpl implements SystemUserService {
     private String secret;
     @Value("${spring.security.oauth2.resourceserver.jwt.token-uri}")
     private String apiUrl;
+
+    public SystemUserServiceImpl(KeycloakSecurityUtil securityUtil, SystemUserRepo systemUserRepo) {
+        this.securityUtil = securityUtil;
+        this.systemUserRepo = systemUserRepo;
+    }
 
     @Override
     public void signup(RequestUserDto requestUserDto) {
